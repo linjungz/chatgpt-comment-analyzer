@@ -1,5 +1,7 @@
-# chatgpt-comment-analyzer
+<h1 align="center">chatgpt-comment-analyzer</h1>
+<div align="center">
 Use LangChain and Azure OpenAI to analyze social media comments
+</div>
 
 ## Introduction
 
