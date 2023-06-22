@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(description='Analyze comments from excel file')
 parser.add_argument('--input', type=str, required=True, help='input excel file path')
 parser.add_argument('--sheet', type=str, required=False, default="Sheet1", help='sheet name in the input excel file')
 parser.add_argument('--output', type=str, required=True, help='output excel file path')
-parser.add_argument('--count', type=int, required=False, default=10, help='number of comments to process')
+parser.add_argument('--count', type=int, required=False, default=0, help='number of comments to process')
 args = parser.parse_args()
 
 # Load the comments from excel to a Dataframe
@@ -45,7 +45,7 @@ for index, row in df.iterrows():
     output_list.append(result)
     
     processed_count += 1
-    if processed_count >= args.count:
+    if args.count > 0 and processed_count >= args.count:
         break
 
 output_df = pd.DataFrame(
